@@ -4,7 +4,7 @@
 **Introduction**
 With HUAWEI Site Kit, your app can provide users with convenient and secure access to diverse, place-related services.
 
-# 2 Use Cases
+#  Use Cases
 
 HUAWEI Site Kit provides the following core capabilities you need to quickly build apps with which your users can explore the world around them:
 
@@ -20,7 +20,7 @@ HUAWEI Site Kit provides the following core capabilities you need to quickly bui
 
 ### Setup
 
--   Available on NuGet:  [https://www.nuget.org/packages/Xamarin.Android.HMSSite/4.0.2.301](https://www.nuget.org/packages/Xamarin.Android.HMSSite/4.0.2.301)
+-   Available on NuGet:  [https://www.nuget.org/packages/Xamarin.Android.HMSSite](https://www.nuget.org/packages/Xamarin.Android.HMSSite/4.0.2.301)
 -   Install into your .NETStandard project and Client projects.
 **Platform Support**
 Xamarin.Android
@@ -60,7 +60,7 @@ refer to the following link to get it [https://developer.huawei.com/consumer/en/
         keytool -genkey -keystore D:\Android\keystore.jks -storepass 123456 -alias sitekitdemo -keypass 123456 -dname "o=Huawei" -keysize 2048 -keyalg RSA -validity 36500
         ```
 
-4. Generate a signing certificate fingerprint
+. Generate a signing certificate fingerprint
     * Open the command line tool (using the **cmd** command) and run the **cd** command to go to the directory where **keytool.exe** is located. The **bin** directory of the **JDK**. (For example; **C:\Program Files\Android\jdk\microsoft_dist_openjdk_1.8.0.25\bin**).
 
         **Note:** Visual Studio comes with OpenJDK installed.
