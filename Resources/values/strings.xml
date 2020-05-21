@@ -1,0 +1,32 @@
+<resources>
+	<string name="app_name">Xamarin HMS Site Kit Demo</string>
+	<string name="action_settings">Settings</string>
+	<string name="start_place_nearby_place_search_activity">Start Place - Nearby Place Search Activity</string>
+	<string name="start_place_detail_search_activity">Start Place Detail Search Activity</string>
+	<string name="start_place_suggestion_search_activity">Start Place Suggestion Search Activity</string>
+	<string name="search_place">Search Place</string>
+	<string name="search_nearby_places">Search Nearby Places</string>
+	<string name="search_place_suggestion">Search Place Suggestion</string>
+	<string name="get_place_details">Get Place Details</string>
+	<string name="parameters">Parameters</string>
+	<string name="result">Result</string>
+	<string name="query_">Query: </string>
+	<string name="latitude_">Latitude: </string>
+	<string name="longitude_">Latitude: </string>
+	<string name="radius_">Radius: </string>
+	<string name="language_">Language: </string>
+	<string name="country_code_">Country Code: </string>
+	<string name="page_index_">Page Index: </string>
+	<string name="page_size_">Page Size: </string>
+	<string name="site_id_">Site ID: </string>
+	<string name="input_query">Eiffel Tower</string>
+	<string name="input_query_pss">Paris</string>
+	<string name="input_latitude">48.893478</string>
+	<string name="input_longitude">2.334595</string>
+	<string name="input_radius">5000</string>
+	<string name="input_language">en</string>
+	<string name="input_country_code">FR</string>
+	<string name="input_page_index">1</string>
+	<string name="input_page_size">20</string>
+	<string name="input_site_id">977B75943A9F01D561FF2073AE1D9353</string>
+</resources>
