@@ -1,34 +1,48 @@
-# Huawei Xamarin Site Demo
+![enter image description here](https://raw.githubusercontent.com/omernaser/Huawei-MAP/master/huaweiicon.png)
+## Xamarin.Android.HMSSite
 
-## Table of Contents
-* [Introduction](#introduction)
-* [Installation](#installation)
-* [Configuration](#configuration)
-* [Licensing and Terms](#licensing-and-terms)
+**Introduction**
+With HUAWEI Site Kit, your app can provide users with convenient and secure access to diverse, place-related services.
 
-## Introduction
-This is a demo application that prepared to use HUAWEI Site Kit Xamarin SDK.
+# 2 Use Cases
 
-## Installation
-Before using HUAWEI Site Kit Xamarin Demo, ensure that the **Visual Studio** has been installed with **Mobile development with .NET** option.
+HUAWEI Site Kit provides the following core capabilities you need to quickly build apps with which your users can explore the world around them:
 
-To use HUAWEI Site Kit Xamarin Demo, you need to generate and import library files from HUAWEI Site Kit Xamarin SDK. To download the SDK and see the instructions, please refer to [developer.huawei.com](https://developer.huawei.com/consumer/en/).
+-   Place search: Returns a place list based on keywords entered by the user.
+    
+-   Nearby place search: Searches for nearby places based on the current location of the user's device.
+    
+-   Place details: Searches for details about a place.
+    
+-   Search suggestion: Returns a list of place suggestions.
 
-If you already have library files please follow the instructions below:
 
-1. Clone this repository.
 
-2. Copy HUAWEI Site Kit Xamarin SDK library files(.dll files) to **_LibDlls** folder of the project.
+### Setup
 
-3. Open **Xamarin Hms Site Demo** project by double clicking **Xamarin Hms Site Demo.sln** file.
+-   Available on NuGet:  [https://www.nuget.org/packages/Xamarin.Android.HMSSite/4.0.2.301](https://www.nuget.org/packages/Xamarin.Android.HMSSite/4.0.2.301)
+-   Install into your .NETStandard project and Client projects.
+**Platform Support**
+Xamarin.Android
 
-4. Wait for 1-2 mins to restore project operation to be completed.
 
-5. Create an App in AppGallery Connect by following instructions in [Creating an App in AppGallery Connect](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#0) page.
+**How To Use**
+1. You should add these lines to your MainActivity.cs
 
-6. Add package name to your app by following instructions in [Add Package Name](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#1) page.
+>          var config = AGConnectServicesConfig.FromContext(this);
+            config.OverlayWith(new HmsLazyInputStream(this));
+            Com.Huawei.Agconnect.AGConnectInstance.Initialize(this);
 
-7. Generate a signing certificate file(aka keystore file)
+2. You should add agconnect-services.json to the assets Folder 
+refer to the following link to get it [https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#0](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#0)
+
+## ***Setup SHA256 Key***
+
+. Create an App in AppGallery Connect by following instructions in [Creating an App in AppGallery Connect](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#0) page.
+
+. Add package name to your app by following instructions in [Add Package Name](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#1) page.
+
+. Generate a signing certificate file(aka keystore file)
     * Open the command line tool (using the **cmd** command) and run the **cd** command to go to the directory where **keytool.exe** is located. The **bin** directory of the **JDK**. (For example; **C:\Program Files\Android\jdk\microsoft_dist_openjdk_1.8.0.25\bin**).
 
         **Note:** Visual Studio comes with OpenJDK installed.
@@ -46,7 +60,7 @@ If you already have library files please follow the instructions below:
         keytool -genkey -keystore D:\Android\keystore.jks -storepass 123456 -alias sitekitdemo -keypass 123456 -dname "o=Huawei" -keysize 2048 -keyalg RSA -validity 36500
         ```
 
-8. Generate a signing certificate fingerprint
+4. Generate a signing certificate fingerprint
     * Open the command line tool (using the **cmd** command) and run the **cd** command to go to the directory where **keytool.exe** is located. The **bin** directory of the **JDK**. (For example; **C:\Program Files\Android\jdk\microsoft_dist_openjdk_1.8.0.25\bin**).
 
         **Note:** Visual Studio comes with OpenJDK installed.
@@ -61,29 +75,66 @@ If you already have library files please follow the instructions below:
     * Obtain the **SHA256** fingerprint from the result.
     * For more details please refer to [Generating a Signing Certificate Fingerprint](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#4) page.
 
-9. Add fingerprint certificate to App in AppGallery Connect by following instructions in [Add fingerprint certificate to AppGallery Connect](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#5) page.
+. Add fingerprint certificate to App in AppGallery Connect by following instructions in [Add fingerprint certificate to AppGallery Connect](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#5) page.
     * After completing the last step on that page, download **agconnect-services.json** file from **App information** section that shown at the end of the page.
 
-10. After completing **step 9** copy **agconnect-services.json** file to Assets directory of the project.
+. After completing **step 9** copy **agconnect-services.json** file to Assets directory of the project.
 
-11. Right click to project and click to **Properties** button in the menu.
+. Right click to project and click to **Properties** button in the menu.
 
-12. In the window; click to **Android Manifest** menu item and change **Package name** according to your app's package name that defined in the **agconnect-services.json** file(It is the same package name that is mentioned in the **step 6**).
+. In the window; click to **Android Manifest** menu item and change **Package name** according to your app's package name that defined in the **agconnect-services.json** file(It is the same package name that is mentioned in the **step 6**).
 
-13. In the same window; click to **Android Package Signing** menu item and set your keystore file information mentioned in **step 7**.
+. In the same window; click to **Android Package Signing** menu item and set your keystore file information mentioned in **step 7**.
     * Check the option "**Sign the .APK file using the following keystore details.**"
     * Give correct file path of your keystore in Keystore section. For example; D:\Android\keystore.jks
     * Use the same keystore information when creating keystore file in **step 7**.
     * **Note:** You should perform these steps for both **Debug** and **Release** build configurations.
 
-14. Right click to project and click to **Build** button in the opened menu.
+. Right click to project and click to **Build** button in the opened menu.
 
-15. Check the logs in the **Output** tab to check that solution built successfully.
+. Check the logs in the **Output** tab to check that solution built successfully.
 
-16. Run the application.
+. Run the application.
 
-## Configuration
-No.
+note you should add SHA256 as following
 
-##  Licensing and Terms
-Huawei Xamarin SDK uses the Apache 2.0 license.
+![enter image description here](https://raw.githubusercontent.com/omernaser/Huawei-Site/master/Capture.PNG)
+## Features
+
+# # Keyword Search
+With this function, users can specify keywords, coordinate bounds, and other information to search for places such as tourist attractions, enterprises, and schools.
+
+# # Nearby Place Search
+With this function, your app can return a list of nearby places based on the current location of a user. When the user selects a place, the app obtains the place ID and searches for details about the place.
+
+# # Place Details
+This function can be used to search for details about a place based on the unique ID of the place.
+
+# # Place Search Suggestion
+This function can be used to return search suggestions during the user input.
+
+**if you have the  error related to BridgeActivity you need to add the following code at manifest file inside the application tag**
+BridgeActivity is responsible about the update 
+
+   
+
+    <activity
+               android:name="com.huawei.hms.activity.BridgeActivity"
+               />
+
+
+
+## Sample :
+
+![enter image description here](https://raw.githubusercontent.com/omernaser/Huawei-Site/master/Screenshot_20200521_131634_com.companyname.hms_map_demo.jpg)
+
+
+![enter image description here](https://raw.githubusercontent.com/omernaser/Huawei-Site/master/Screenshot_20200521_131656_com.companyname.hms_map_demo.jpg)
+
+
+![enter image description here](https://raw.githubusercontent.com/omernaser/Huawei-Site/master/Screenshot_20200521_131719_com.companyname.hms_map_demo.jpg)
+
+## Reference
+[https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/hms-site-business-introduction](https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/hms-site-business-introduction)
+
+[https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/hms-site-configuringagc](https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/hms-site-configuringagc)
