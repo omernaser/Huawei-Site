@@ -36,6 +36,7 @@ Xamarin.Android
 2. You should add agconnect-services.json to the assets Folder 
 refer to the following link to get it [https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#0](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#0)
 
+3.plese make sure you have HMSBase in your refrence https://www.nuget.org/packages/Xamarin.Android.HMSBase/
 ## ***Setup SHA256 Key***
 
 . Create an App in AppGallery Connect by following instructions in [Creating an App in AppGallery Connect](https://developer.huawei.com/consumer/en/codelab/HMSPreparation/index.html#0) page.
